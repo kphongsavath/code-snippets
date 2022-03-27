@@ -1,2 +1,2 @@
 # code-snippets
-code snippets
+Personal collection of Code snippets
