@@ -8,10 +8,10 @@ $DOMAIN = 'kp-development.com';
 $CA_CERT_TEMP_LOC = "D:\certificates"
 
 $CERTS_TO_CREATE = @(
-"ledger.$($ENVIONMENT).$($DOMAIN)",
+"ledger.$($ENVIONMENT).$($DOMAIN)"
 );
 
-if(Text-Path $CA_CERT_TEMP_LOC){
+if(Test-Path $CA_CERT_TEMP_LOC){
 }else{
     New-Item $CA_CERT_TEMP_LOC -ItemType Directory
 
@@ -56,5 +56,4 @@ foreach ($CERT_NAME in $CERTS_TO_CREATE)
 {
   New-SelfSignedCertificate -certstorelocation cert:\LocalMachine\My -dnsname $CERT_NAME -FriendlyName $CERT_NAME -Signer $rootca -NotAfter $([datetime]::now.AddYears(5))
 }
-
 
