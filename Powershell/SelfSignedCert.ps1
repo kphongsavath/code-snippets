@@ -1,14 +1,14 @@
 
-$CA_CERT_NAME = 'Cancer Sitecore CA';
-$ENVIONMENT = 'qa';
+$CA_CERT_NAME = 'Self Signed CA';
+$ENVIONMENT = '';
 $CA_Thumbprint = '';
-$DOMAIN = 'osumc.edu';
+$DOMAIN = 'kp-development.com';
 
 #Make Sure location exists
-$CA_CERT_TEMP_LOC = "C:\certificates"
+$CA_CERT_TEMP_LOC = "D:\certificates"
 
 $CERTS_TO_CREATE = @(
-"cancer-processing-$($ENVIONMENT).$($DOMAIN)",
+"ledger.$($ENVIONMENT).$($DOMAIN)",
 );
 
 if(Text-Path $CA_CERT_TEMP_LOC){
